@@ -1,0 +1,39 @@
+/* WeekOS Today's Tasks: theme-native compact cards and accessible status popovers. */
+#quickTasks{display:grid;gap:9px;padding-top:9px}
+#quickTasks .woCompactRow{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;min-width:0;padding:13px 14px;border:1px solid var(--line2);border-radius:var(--r,11px);background:linear-gradient(145deg,var(--panel2),var(--panel));box-shadow:0 4px 16px color-mix(in srgb,var(--bg) 24%,transparent);transition:border-color .18s ease,transform .18s ease,box-shadow .18s ease}
+#quickTasks .woCompactRow:hover{border-color:var(--accent-border);transform:translateY(-1px);box-shadow:0 7px 22px color-mix(in srgb,var(--bg) 36%,transparent)}
+#quickTasks .woCompactOpen{min-width:0;width:100%;border:0;background:none;color:var(--text);padding:0;text-align:left;cursor:pointer;display:grid;gap:7px}
+#quickTasks .woCompactHeading{display:flex;flex-wrap:wrap;align-items:center;gap:7px;min-width:0}
+#quickTasks .woCompactHeading strong{font-size:13px;line-height:1.45;font-weight:650;overflow-wrap:anywhere;min-width:0}
+#quickTasks .woKind{display:inline-flex;align-items:center;flex:none;padding:3px 7px;border-radius:6px;background:var(--accent-soft);color:var(--accent);font-size:9px;font-weight:750;letter-spacing:.065em;text-transform:uppercase}
+#quickTasks .woCompactOpen small{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted);line-height:1.3}
+#quickTasks .woCompactStatus{position:relative;justify-self:end;min-width:0}
+#quickTasks .woStatusTrigger{display:inline-flex;align-items:center;justify-content:space-between;gap:9px;min-height:34px;max-width:168px;border:1px solid var(--line);border-radius:9px;background:var(--panel);color:var(--text);padding:7px 9px;cursor:pointer;font-size:11px;font-weight:600;transition:background .16s ease,border-color .16s ease}
+#quickTasks .woStatusTrigger:hover,#quickTasks .woStatusTrigger[aria-expanded=true]{border-color:var(--accent-border);background:var(--accent-soft)}
+#quickTasks .woStatusTrigger .woStatusDot{width:7px;height:7px;border-radius:50%;background:var(--muted);flex:none}
+#quickTasks [data-status-value=completed] .woStatusDot,#quickTasks [data-status-value=Attended] .woStatusDot{background:var(--green)}
+#quickTasks [data-status-value=not_completed] .woStatusDot,#quickTasks [data-status-value=Absent] .woStatusDot{background:var(--pink)}
+#quickTasks [data-status-value=Online] .woStatusDot{background:var(--blue)}
+#quickTasks [data-status-value='Not Held'] .woStatusDot{background:var(--amber)}
+#quickTasks .woStatusChevron{font-size:11px;color:var(--muted)}
+#quickTasks .woStatusMenu{position:absolute;z-index:35;right:0;top:calc(100% + 6px);min-width:178px;padding:5px;border:1px solid var(--line);border-radius:11px;background:var(--panel);box-shadow:var(--shadow);display:grid;gap:2px;animation:woMenuIn .15s ease-out}
+#quickTasks .woStatusMenu[hidden]{display:none!important}
+#quickTasks .woStatusChoice{display:flex;align-items:center;gap:9px;width:100%;border:0;border-radius:7px;background:transparent;color:var(--text);text-align:left;padding:9px 10px;cursor:pointer;font-size:12px}
+#quickTasks .woStatusChoice:hover,#quickTasks .woStatusChoice[aria-checked=true]{background:var(--accent-soft);color:var(--accent)}
+#quickTasks .woStatusChoice .woOptionIcon{width:16px;text-align:center;font-weight:700;color:var(--muted)}
+#quickTasks .woStatusChoice[aria-checked=true] .woOptionIcon{color:var(--accent)}
+#quickTasks .woCompactRow.woJustUpdated{border-color:var(--accent-border);box-shadow:0 0 0 2px var(--accent-focus)}
+@keyframes woMenuIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:560px){#quickTasks .woCompactRow{grid-template-columns:minmax(0,1fr);gap:10px;padding:12px}#quickTasks .woCompactStatus{justify-self:start}#quickTasks .woStatusTrigger{max-width:100%}#quickTasks .woStatusMenu{left:0;right:auto}#quickTasks .woCompactHeading strong{font-size:12px}}
+@media(prefers-reduced-motion:reduce){#quickTasks .woCompactRow,#quickTasks .woStatusTrigger,#quickTasks .woStatusMenu{animation:none!important;transition:none!important;transform:none!important}}
+
+/* Two-button completion / attendance control: theme-native and responsive. */
+#quickTasks .woCompactActions{display:inline-flex;align-items:center;justify-self:end;gap:6px;flex:none}
+#quickTasks .woBinaryButton{appearance:none;display:inline-grid;place-items:center;width:33px;height:33px;padding:0;border:1px solid var(--line);border-radius:9px;background:var(--panel);color:var(--muted);font:700 16px/1 inherit;cursor:pointer;transition:background .16s ease,border-color .16s ease,color .16s ease,transform .16s ease,box-shadow .16s ease}
+#quickTasks .woBinaryButton:hover{background:var(--accent-soft);border-color:var(--accent-border);color:var(--text);transform:translateY(-1px)}
+#quickTasks .woBinaryButton:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+#quickTasks .woBinaryYes[aria-pressed=true]{background:color-mix(in srgb,var(--green) 14%,var(--panel));border-color:color-mix(in srgb,var(--green) 48%,var(--line));color:var(--green)}
+#quickTasks .woBinaryNo[aria-pressed=true]{background:color-mix(in srgb,var(--pink) 14%,var(--panel));border-color:color-mix(in srgb,var(--pink) 48%,var(--line));color:var(--pink)}
+@media(max-width:560px){#quickTasks .woCompactRow{grid-template-columns:minmax(0,1fr) auto;gap:9px}#quickTasks .woCompactActions{justify-self:end}#quickTasks .woBinaryButton{width:32px;height:32px}}
+@media(max-width:340px){#quickTasks .woCompactRow{grid-template-columns:minmax(0,1fr)}#quickTasks .woCompactActions{justify-self:start}}
+@media(prefers-reduced-motion:reduce){#quickTasks .woBinaryButton{transition:none!important;transform:none!important}}

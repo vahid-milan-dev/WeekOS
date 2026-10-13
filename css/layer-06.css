@@ -1,0 +1,41 @@
+
+/* Sidebar: main navigation + flexible spacer + intentionally anchored utility group. */
+.sidebar{display:flex!important;flex-direction:column!important;overflow:hidden!important;padding-bottom:18px!important}
+.sidebar>.nav{flex:1 1 auto;min-height:0;overflow-y:auto;overflow-x:hidden;padding-right:2px}
+.sidebarBottom{flex:0 0 auto;margin-top:14px;padding-top:2px}
+.sidebarBottom .bottomLabel{margin:0 4px 9px!important;padding:10px 8px 7px!important;min-height:30px!important}
+.sidebarBottom .weekcard{position:relative!important;inset:auto!important;left:auto!important;right:auto!important;bottom:auto!important;margin:0!important;width:100%!important;padding:12px 13px!important}
+.sidebarBottom .weekcard .row{align-items:center}.sidebarBottom .progress{margin-top:10px}
+/* Today and selection are intentionally different states. Only .today gets accent fill. */
+.calhead .day{margin:5px;border-radius:7px;cursor:pointer;position:relative;transition:background .14s,border-color .14s,box-shadow .14s}
+.calhead .day.today{background:color-mix(in srgb,var(--accent) 26%,var(--panel))!important;color:var(--text)!important;outline:1px solid color-mix(in srgb,var(--accent) 76%,transparent)!important;box-shadow:inset 0 -2px 0 var(--accent)!important}
+.calhead .day.selected:not(.today){background:var(--panel2)!important;color:var(--text)!important;outline:1px dashed var(--line)!important;box-shadow:none!important}
+.calhead .day.selected:not(.today)::after{content:'Selected';position:absolute;bottom:2px;font-size:7px;letter-spacing:.35px;color:var(--muted)}
+html.light .calhead .day.today{background:color-mix(in srgb,var(--accent) 15%,#fff)!important;color:#173047!important}
+html.light .calhead .day.selected:not(.today){background:#f3f7fa!important;color:#294b63!important}
+@media(max-width:760px){.sidebar{overflow-y:auto!important}.sidebar>.nav{overflow:visible}.sidebarBottom{margin-top:18px;padding-bottom:74px}.sidebarBottom .weekcard{margin-bottom:0!important}}
+
+/* Release polish: current-day focus, sidebar, scrollbar, weekly progress and hero */
+.sidebar{scrollbar-width:thin;scrollbar-color:#29465d #071521}
+.sidebar>.nav{scrollbar-width:thin;scrollbar-color:#29465d transparent}
+.sidebar::-webkit-scrollbar,.sidebar>.nav::-webkit-scrollbar{width:8px}
+.sidebar::-webkit-scrollbar-track{background:#071521;border-radius:10px}
+.sidebar>.nav::-webkit-scrollbar-track{background:transparent}
+.sidebar::-webkit-scrollbar-thumb,.sidebar>.nav::-webkit-scrollbar-thumb{background:#29465d;border:2px solid #071521;border-radius:999px}
+.sidebar>.nav::-webkit-scrollbar-thumb{border-color:transparent;background-clip:padding-box}
+.sidebar::-webkit-scrollbar-thumb:hover,.sidebar>.nav::-webkit-scrollbar-thumb:hover{background:#385d78}
+html.light .sidebar{scrollbar-color:#aebfcb #edf3f7}
+html.light .sidebar::-webkit-scrollbar-track{background:#edf3f7}
+html.light .sidebar::-webkit-scrollbar-thumb{background:#aebfcb;border-color:#edf3f7}
+html.light .sidebar::-webkit-scrollbar-thumb:hover{background:#8ea6b6}
+.sidebarBottom{border-top:1px solid var(--line2);padding-top:12px!important}.sidebarBottom .bottomLabel{border:0!important;background:none!important;padding:0 5px 8px!important;margin:0!important;min-height:auto!important;font-size:9px!important;letter-spacing:1.1px!important}.sidebarBottom .bottomLabel:after{display:none}
+.weekcard{border-color:color-mix(in srgb,var(--accent) 38%,var(--line));background:linear-gradient(145deg,color-mix(in srgb,var(--panel) 94%,var(--accent) 6%),var(--panel));box-shadow:0 8px 24px rgba(0,0,0,.12)}
+.weekcard .weekIcon{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent);flex:0 0 30px}.weekcard .weekIcon svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.weekcard #weekNo{font-size:12px;letter-spacing:.15px}.weekcard #weekRange{font-size:10px!important;color:var(--muted)!important;margin-top:3px!important}.weekProgressLabel{margin-top:10px!important}.weekcard .progress{height:5px!important;background:color-mix(in srgb,var(--muted) 20%,transparent)!important}.weekcard .progress i{border-radius:999px;transition:width .25s ease}
+/* The actual Tehran current day is the only Today state. Selection is separate. */
+.calhead .day{transition:opacity .18s ease,background .18s ease,color .18s ease;opacity:.58}.calhead .day.today{opacity:1!important;font-weight:750!important;background:color-mix(in srgb,var(--accent) 18%,var(--panel))!important;color:var(--text)!important;outline:1px solid var(--accent-border)!important;box-shadow:inset 0 -2px 0 var(--accent)!important}.calhead .day.today small{color:var(--accent);font-weight:750}.calhead .day.selected:not(.today){opacity:.84}.todayColumn{position:absolute;top:0;bottom:0;z-index:0;pointer-events:none;background:linear-gradient(180deg,color-mix(in srgb,var(--accent) 8%,transparent),color-mix(in srgb,var(--accent) 2%,transparent));border-left:1px solid color-mix(in srgb,var(--accent) 16%,transparent);border-right:1px solid color-mix(in srgb,var(--accent) 12%,transparent)}
+#today .event.secondary{opacity:.43;filter:saturate(.72);transition:opacity .18s ease,filter .18s ease}#today .event:not(.secondary){opacity:1;filter:none}.hline,.vline,.lunch{z-index:1}.event,.nowline{z-index:3}
+html.light .calhead .day{opacity:.66}html.light .calhead .day.today{background:color-mix(in srgb,var(--accent) 12%,#fff)!important;color:#173047!important}html.light .todayColumn{background:linear-gradient(180deg,color-mix(in srgb,var(--accent) 7%,transparent),transparent)}
+/* Atmospheric motivational hero image, self-contained and watermark-free. */
+.quote{position:relative;isolation:isolate;overflow:hidden;min-width:270px;max-width:330px;min-height:92px;padding:17px 18px 16px 48px!important;border:1px solid color-mix(in srgb,var(--accent) 34%,var(--line))!important;border-radius:12px!important;color:#f4f9ff!important;font-size:13px!important;font-weight:650;line-height:1.5;letter-spacing:.05px;background-image:linear-gradient(90deg,rgba(2,10,19,.90) 0%,rgba(3,17,30,.72) 48%,rgba(5,22,38,.28) 100%),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 300'%3E%3Cdefs%3E%3ClinearGradient id='s' x2='0' y2='1'%3E%3Cstop stop-color='%23061b32'/%3E%3Cstop offset='.55' stop-color='%230b3150'/%3E%3Cstop offset='1' stop-color='%23031525'/%3E%3CradialGradient id='g' cx='.72' cy='.22' r='.45'%3E%3Cstop stop-color='%2368b9e8' stop-opacity='.5'/%3E%3Cstop offset='1' stop-color='%23051a2d' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='800' height='300' fill='url(%23s)'/%3E%3Crect width='800' height='300' fill='url(%23g)'/%3E%3Cpath d='M0 250L130 130l82 78 105-116 100 121 76-70 93 92 95-115 119 130v50H0z' fill='%23081a27'/%3E%3Cpath d='M0 270l150-91 88 60 112-83 109 89 88-57 96 68 75-66 82 70v40H0z' fill='%23040f18' opacity='.9'/%3E%3C/svg%3E");background-size:cover;background-position:center;box-shadow:0 10px 28px rgba(0,0,0,.18)}.quote .quoteIcon{position:absolute;left:17px;top:17px;width:21px;height:21px;color:#dcefff;opacity:.92}.quote .quoteIcon svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.quote strong{display:block;font-size:13px;font-weight:700}.quote span{display:block;color:#d3e6f7;font-size:12px;font-weight:500;margin-top:1px}
+html.light .quote{border-color:#9fbdd1!important;box-shadow:0 9px 24px rgba(36,70,94,.13)}
+@media(max-width:980px){.quote{min-width:235px;max-width:280px}}@media(max-width:780px){.hero{gap:12px;align-items:stretch}.hero .quote{display:block;min-width:0;max-width:100%;flex:1;min-height:84px}}@media(max-width:560px){.hero{display:grid}.quote{width:100%;min-height:88px}}

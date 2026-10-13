@@ -1,0 +1,1 @@
+window.WEEKOS_PUBLIC_BUILD=true;

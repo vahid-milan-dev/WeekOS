@@ -1,0 +1,1 @@
+.woTime24{display:grid;grid-template-columns:1fr 1fr;gap:9px}.woTime24 select{width:100%;min-width:0;background:#06131f;color:#eaf4ff;border:1px solid #1b4d72;border-radius:8px;padding:10px}.woTime24 label{font-size:11px;color:#8eb7df}.woTime24 .woClockPart{display:grid;gap:5px}html.light .woTime24 select{background:white;color:#173047}

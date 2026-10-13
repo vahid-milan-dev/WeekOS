@@ -1,0 +1,16 @@
+
+/* Calendar-only final layout: dedicated year page, 12 real months visible together. */
+.calendarExplorer{display:none!important}
+#page-calendar{width:100%}
+#page-calendar.active{display:block!important}
+#page-calendar .calendarPageNative{padding:4px 0 20px}
+#page-calendar .yearMonths{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:12px}
+#page-calendar .yearMonth{display:block!important;min-height:208px!important}
+#page-calendar .miniWeek,#page-calendar .miniDays{display:grid!important;grid-template-columns:repeat(7,1fr)!important}
+#page-calendar .miniDays button.today{background:var(--accent)!important;color:#fff!important;font-weight:800!important;box-shadow:0 0 0 1px color-mix(in srgb,var(--accent) 75%,white 25%)}
+#page-calendar .miniDays button.selected:not(.today){background:color-mix(in srgb,var(--accent) 10%,transparent);box-shadow:inset 0 0 0 1px var(--accent)!important}
+#page-calendar .yearMonth.current{border-color:color-mix(in srgb,var(--accent) 65%,var(--line))!important;background:color-mix(in srgb,var(--accent) 6%,var(--panel))!important}
+.stat .bigico svg,.mini .bigico svg{width:20px;height:20px;display:block;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:1200px){#page-calendar .yearMonths{grid-template-columns:repeat(3,minmax(0,1fr))!important}}
+@media(max-width:900px){#page-calendar .yearMonths{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:650px){#page-calendar .yearMonths{grid-template-columns:1fr!important}}

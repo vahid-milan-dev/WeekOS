@@ -1,0 +1,16 @@
+
+/* Schedule has independent breathing room and a fully accessible 24-hour grid. */
+#today .calendar{margin:2px;padding:12px;overflow:auto;max-height:min(76vh,900px);scrollbar-color:var(--accent) var(--panel)}
+#today .calendarinner{min-width:760px}#calendarGrid{cursor:crosshair}#calendarGrid .event,#calendarGrid .woMeal{cursor:pointer}
+#calendarGrid .tlabel{padding-left:4px;transform:translateY(-45%)}#calendarGrid .hline{opacity:.75}
+#calendarGrid .woNow{z-index:12;pointer-events:none}#calendarGrid .woNow:before{content:'';position:absolute;left:-5px;top:-5px;width:9px;height:9px;border-radius:50%;background:var(--accent)}
+.mark{transform:none!important;width:34px!important;height:34px!important;display:grid;place-items:center;flex:none}
+.mark:before,.mark:after{display:none!important}.mark svg{width:34px;height:34px;overflow:visible;filter:drop-shadow(0 2px 7px color-mix(in srgb,var(--accent) 40%,transparent))}
+html[data-wo-theme="forest"] .panel,html[data-wo-theme="forest"] .coursecard{border-radius:18px 5px 18px 5px}
+html[data-wo-theme="violet"] .panel,html[data-wo-theme="violet"] .coursecard{border-radius:19px;box-shadow:0 8px 35px #8d54ff24}
+html[data-wo-theme="ember"] .panel,html[data-wo-theme="ember"] .coursecard{border-radius:5px 18px 5px 18px}
+html[data-wo-theme="rose"] .panel,html[data-wo-theme="rose"] .coursecard{border-radius:22px}
+html[data-wo-theme="paper"] .panel,html[data-wo-theme="paper"] .coursecard{border-radius:4px;box-shadow:0 3px 12px #29465b12}
+html[data-wo-theme="forest"] body{font-family:'Trebuchet MS',sans-serif}html[data-wo-theme="violet"] body{font-family:Georgia,serif}html[data-wo-theme="ember"] body{font-family:Verdana,sans-serif}html[data-wo-theme="rose"] body{font-family:Tahoma,sans-serif}html[data-wo-theme="paper"] body{font-family:Arial,sans-serif}
+html[data-wo-theme="forest"] .sidebar{background:linear-gradient(165deg,#092a22,#051813)!important}html[data-wo-theme="violet"] .sidebar{background:linear-gradient(165deg,#291b4c,#110e25)!important}html[data-wo-theme="ember"] .sidebar{background:linear-gradient(165deg,#39251b,#1c1311)!important}html[data-wo-theme="rose"] .sidebar{background:linear-gradient(165deg,#3b1d30,#1b101d)!important}
+html[data-wo-theme="forest"] .nav .ico{border-radius:50%;background:#1d634b44}html[data-wo-theme="violet"] .nav .ico{transform:rotate(-8deg)}html[data-wo-theme="ember"] .nav .ico{border:1px solid #b9775044;border-radius:6px}html[data-wo-theme="rose"] .nav .ico{border-radius:12px;background:#c7578740}

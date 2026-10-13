@@ -1,0 +1,1 @@
+Today Tasks uses the WeekOS theme tokens and a compact accessible custom status menu. Task status is per occurrence for recurring tasks; university attendance is keyed by class and date. Status changes use the existing save and dashboard synchronization pipeline. No external dependencies.

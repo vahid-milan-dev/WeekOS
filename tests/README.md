@@ -1,0 +1,1 @@
+Manual browser acceptance: open index.html via file://; add a task, activity and class; set each status ✓ ✕ ○; verify Today’s Classes Status; edit/delete and verify instant changes; reopen and verify storage. This manual acceptance has not been completed in the authoring environment.

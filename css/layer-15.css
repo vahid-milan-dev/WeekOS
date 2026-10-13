@@ -1,0 +1,7 @@
+
+#page-calendar .calendarIconButton{width:36px;height:36px;padding:0!important;display:inline-grid;place-items:center}
+#page-calendar .calendarNavIcon{width:18px;height:18px;display:block;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+#page-calendar .calendarPageToday{display:inline-flex;align-items:center;gap:7px}
+#page-calendar .calendarPageToday .calendarTodayIcon{width:16px;height:16px}
+#page-calendar .calendarIconButton:hover,#page-calendar .calendarIconButton:focus-visible,#page-calendar .calendarPageToday:hover,#page-calendar .calendarPageToday:focus-visible{border-color:var(--accent);color:var(--accent);outline:none}
+#page-calendar .calendarIconButton:focus-visible,#page-calendar .calendarPageToday:focus-visible{box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 18%,transparent)}

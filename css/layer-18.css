@@ -1,0 +1,11 @@
+
+.brand .mark{width:34px;height:34px;transform:none;flex:none;background-image:var(--weekos-logo);background-size:contain;background-repeat:no-repeat;background-position:center;border-radius:9px}
+.brand .mark:before,.brand .mark:after{display:none}
+.calendar{overflow:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:var(--line) transparent;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y;scroll-behavior:auto}
+.calendar::-webkit-scrollbar{width:7px;height:7px}.calendar::-webkit-scrollbar-thumb{background:var(--line);border-radius:20px}
+.calendar .calendarinner{min-width:760px}.calendar .gridwrap{min-height:1200px}
+.woTodayItem{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center;padding:10px 2px;border-bottom:1px solid var(--line2)}
+.woTodayItem small{display:block;color:var(--muted);font-size:10px;margin-top:4px}.woTodayItem strong{font-size:12px}
+.woStatusButtons{display:flex;gap:4px}.woStatusButtons button{cursor:pointer;border:1px solid var(--line);background:var(--panel2);border-radius:7px;padding:5px 8px;min-width:30px}
+.woStatusButtons button[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
+.woTodayItem .woKind{font-size:10px;color:var(--accent);margin-right:5px}

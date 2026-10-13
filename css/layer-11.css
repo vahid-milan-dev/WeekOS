@@ -1,0 +1,10 @@
+
+.heroCard,.motivation,.quoteCard,[class*="hero"]{--hero-size:clamp(19px,2vw,28px)}
+.heroCard h2,.heroCard .quote,.motivation h2,.motivation .quote,.quoteCard h2{font-size:var(--hero-size)!important;line-height:1.16!important}
+.calendarPageNative{padding:4px 0 20px}.calendarPageTop{display:flex;align-items:center;justify-content:center;gap:12px;margin:4px 0 18px}.calendarPageTop h2{margin:0;min-width:100px;text-align:center;font-size:24px}
+.calendarPageTop button,.calendarPageToday{border:1px solid var(--line);background:var(--panel2);color:var(--text);border-radius:9px;padding:8px 12px;cursor:pointer}.calendarPageTop button:hover,.calendarPageToday:hover{border-color:var(--accent);color:var(--accent)}
+.yearMonths{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.yearMonth{border:1px solid var(--line);background:var(--panel);border-radius:12px;padding:13px;cursor:pointer;transition:.15s}.yearMonth:hover{border-color:color-mix(in srgb,var(--accent) 55%,var(--line));transform:translateY(-1px)}.yearMonth.current{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 7%,var(--panel))}
+.yearMonth h3{font-size:13px;margin:0 0 9px}.miniWeek,.miniDays{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;text-align:center}.miniWeek span{font-size:8px;color:var(--muted);padding:2px}.miniDays span{font-size:9px;min-height:20px;display:grid;place-items:center;border-radius:5px;color:var(--text)}.miniDays span.out{opacity:.24}.miniDays span.today{background:var(--accent);color:#fff;font-weight:800}.miniDays span.selected:not(.today){box-shadow:inset 0 0 0 1px var(--accent)}
+.calendarPageActions{display:flex;justify-content:flex-end;margin-top:12px}
+.dashSvg{width:19px;height:19px;display:block;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:1050px){.yearMonths{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:650px){.yearMonths{grid-template-columns:1fr}.calendarPageTop h2{font-size:20px}}

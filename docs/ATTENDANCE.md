@@ -1,0 +1,1 @@
+Five statuses: Attended, Online, Absent, Not Held, Not Yet. Stored as state.attendance[ISO_DATE + "|" + classId]. Each week occurrence is independent. The app opens Today on each page load, without deleting persisted data.

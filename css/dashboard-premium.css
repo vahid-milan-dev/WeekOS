@@ -1,0 +1,28 @@
+/* WeekOS dashboard editorial hero — local/offline asset */
+#today .hero.wo-premium-hero{display:grid!important;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:18px;align-items:stretch;margin:0 0 22px;min-width:0}
+#today .wo-welcome{position:relative;min-width:0;min-height:222px;padding:30px clamp(22px,3vw,38px);display:flex;flex-direction:column;justify-content:center;overflow:hidden;border:1px solid color-mix(in srgb,var(--blue,#369bfa) 25%,transparent);border-radius:22px;background:linear-gradient(125deg,rgba(43,119,178,.13),transparent 65%),linear-gradient(160deg,#0c2235,#081725);box-shadow:0 18px 42px rgba(0,0,0,.14)}
+#today .wo-welcome:before{content:"";position:absolute;width:240px;height:240px;right:-100px;top:-135px;border-radius:50%;background:radial-gradient(circle,rgba(77,169,255,.22),transparent 70%);pointer-events:none}
+#today .wo-eyebrow{font-size:10px;font-weight:750;letter-spacing:.18em;text-transform:uppercase;color:var(--blue,#69baff);margin-bottom:14px;display:flex;align-items:center;gap:9px}
+#today .wo-eyebrow:before{content:"";width:21px;height:1px;background:currentColor}
+#today .wo-welcome h1{position:relative;font-size:clamp(25px,2.6vw,39px)!important;letter-spacing:-.045em;line-height:1.13;margin:0 0 12px;overflow-wrap:anywhere;font-weight:740}
+#today .wo-welcome h1 span{color:var(--blue,#65b6ff)}
+#today .wo-welcome p{font-size:13px;line-height:1.65;color:var(--muted,#a6c1d8);max-width:39ch;margin:0}
+#today .wo-welcome .wo-date{font-size:11px;margin-top:22px;opacity:.78;letter-spacing:.02em;color:var(--text,#e4f3ff)}
+#today .quote.wo-quote{position:relative;isolation:isolate;min-width:0!important;max-width:none!important;min-height:222px!important;height:auto!important;padding:25px 27px!important;display:flex!important;flex-direction:column;justify-content:space-between;align-items:stretch;overflow:hidden;border:1px solid rgba(216,232,246,.19)!important;border-radius:22px!important;color:#fff!important;background:linear-gradient(90deg,rgba(4,12,23,.88),rgba(6,18,31,.66) 60%,rgba(7,18,30,.35)),linear-gradient(0deg,rgba(4,12,23,.65),transparent 80%),url('../assets/images/motivation-landscape.svg') center 52%/cover no-repeat!important;box-shadow:0 18px 42px rgba(0,0,0,.2)!important}
+#today .wo-quote-top,#today .wo-quote-bottom{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:12px}
+#today .wo-quote-kicker{font-size:10px;letter-spacing:.17em;font-weight:750;color:#e6d4bb;text-transform:uppercase}
+#today .wo-next-quote{cursor:pointer;flex-shrink:0;width:33px;height:33px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.32);border-radius:10px;color:#fff;background:rgba(255,255,255,.09);backdrop-filter:blur(6px);transition:background .2s,transform .2s}
+#today .wo-next-quote:hover{background:rgba(255,255,255,.2);transform:translateY(-2px)}
+#today .wo-next-quote:focus-visible{outline:2px solid #fff;outline-offset:3px}
+#today .wo-quote-copy{position:relative;z-index:1;font-size:clamp(17px,1.8vw,24px);line-height:1.34;font-weight:630;letter-spacing:-.025em;max-width:33ch;text-wrap:balance;margin:18px 0 14px;text-shadow:0 2px 12px rgba(0,0,0,.3)}
+#today .wo-quote-bottom{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#e7d8c7}
+#today .wo-quote-copy.wo-changing{animation:wo-quote-reveal .38s ease both}
+@keyframes wo-quote-reveal{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+@keyframes wo-hero-enter{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
+#today .wo-welcome,#today .wo-quote{animation:wo-hero-enter .55s ease both}#today .wo-quote{animation-delay:.09s}
+html.light #today .wo-welcome{background:linear-gradient(125deg,#f4f9ff,#e5f1fc);border-color:#c8deee;box-shadow:0 12px 28px rgba(37,88,128,.09)}
+html.light #today .wo-welcome h1{color:#16354c}html.light #today .wo-welcome p{color:#56748c}html.light #today .wo-welcome .wo-date{color:#345a75}
+@media(max-width:960px){#today .hero.wo-premium-hero{grid-template-columns:1fr 1fr;gap:12px}#today .wo-welcome,#today .quote.wo-quote{min-height:205px!important;padding:22px!important}}
+@media(max-width:700px){#today .hero.wo-premium-hero{grid-template-columns:minmax(0,1fr)}#today .wo-welcome,#today .quote.wo-quote{min-height:190px!important}#today .quote.wo-quote{display:flex!important}#today .wo-welcome h1{font-size:clamp(25px,7vw,34px)!important}}
+@media(prefers-reduced-motion:reduce){#today .wo-welcome,#today .wo-quote,#today .wo-quote-copy.wo-changing{animation:none!important}#today .wo-next-quote{transition:none!important}#today .wo-next-quote:hover{transform:none}}
+html.reduce-motion #today .wo-welcome,html.reduce-motion #today .wo-quote,html.reduce-motion #today .wo-quote-copy.wo-changing{animation:none!important}

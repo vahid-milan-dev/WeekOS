@@ -1,0 +1,22 @@
+
+.calendarExplorer{margin:14px 0 4px;border-top:1px solid var(--line2);padding-top:12px}
+.calendarExplorer button{font:inherit}
+.calExplorerHead{width:100%;border:0;background:transparent;color:var(--muted);display:flex;align-items:center;justify-content:space-between;padding:8px 7px;cursor:pointer;font-size:10px;font-weight:800;letter-spacing:1.1px;text-transform:uppercase}
+.calExplorerHead:hover{color:var(--text)}
+.calExplorerBody{padding:4px 5px 9px}.calExplorerBody.collapsed{display:none}
+.calYearRow{display:grid;grid-template-columns:30px 1fr 30px;gap:5px;align-items:center;margin-bottom:8px}
+.calYearRow button,.calTodayBtn{border:1px solid var(--line);background:var(--panel2);color:var(--text);border-radius:8px;min-height:30px;cursor:pointer}
+.calYearRow button:hover,.calTodayBtn:hover{border-color:var(--accent);color:var(--accent)}
+.calYear{text-align:center;font-weight:750;font-size:13px}
+.calMonths{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}
+.calMonth{border:1px solid transparent;background:transparent;color:var(--muted);padding:7px 3px;border-radius:7px;cursor:pointer;font-size:10px}
+.calMonth:hover{background:var(--panel2);color:var(--text)}.calMonth.current{color:var(--accent);border-color:color-mix(in srgb,var(--accent) 45%,transparent);background:color-mix(in srgb,var(--accent) 10%,transparent)}
+.calMonth.selected{box-shadow:inset 0 0 0 1px var(--accent);color:var(--text)}
+.calTodayBtn{width:100%;margin-top:8px;font-size:10px}
+.monthOverlay{position:fixed;inset:0;z-index:90;background:rgba(2,9,15,.68);backdrop-filter:blur(5px);display:none;align-items:center;justify-content:center;padding:20px}.monthOverlay.open{display:flex}
+.monthDialog{width:min(760px,96vw);max-height:90vh;overflow:auto;background:var(--panel);border:1px solid var(--line);border-radius:14px;box-shadow:0 24px 80px rgba(0,0,0,.45);padding:18px}
+.monthTop{display:flex;align-items:center;gap:10px;margin-bottom:14px}.monthTop h3{margin:0;flex:1;font-size:18px}.monthTop button{border:1px solid var(--line);background:var(--panel2);color:var(--text);border-radius:8px;padding:8px 11px;cursor:pointer}
+.monthGrid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}.monthDow{text-align:center;color:var(--muted);font-size:10px;font-weight:750;padding:7px 2px}
+.monthDay{min-height:72px;border:1px solid var(--line2);background:var(--panel2);color:var(--text);border-radius:9px;padding:8px;text-align:left;cursor:pointer;position:relative}.monthDay:hover{border-color:var(--accent)}.monthDay.other{opacity:.42}.monthDay.today{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 14%,var(--panel2));font-weight:800}.monthDay.selected{box-shadow:inset 0 0 0 2px color-mix(in srgb,var(--accent) 60%,transparent)}
+.monthDay .count{position:absolute;right:7px;bottom:7px;color:var(--muted);font-size:9px}.monthDay.today .count{color:var(--accent)}
+@media(max-width:760px){.monthOverlay{padding:8px}.monthDialog{padding:12px}.monthGrid{gap:3px}.monthDay{min-height:52px;padding:6px;font-size:11px}.monthDay .count{display:none}}
